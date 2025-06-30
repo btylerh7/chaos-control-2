@@ -1,7 +1,11 @@
 <!DOCTYPE html>
 <html>
-<script defer="defer" src="components/Layout.js"></script>
-<script defer="defer" src="components/Navbar.js"></script>
+  <script defer="defer" src="components/Layout.js"></script>
+  <script defer="defer" src="components/Navbar.js"></script>
+  <script defer="defer" src="components/Home.js"></script>
+  <script defer="defer" src="components/MusicLibrary.js"></script>
+  <script defer="defer" src="components/MusicAlbum.js"></script>
+  <script defer="defer" src="script.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
 <site-head title="Chaos Control - Home"> </site-head>
 
@@ -11,15 +15,8 @@
       <p>Chaos Control</p>
       <img src="./ChaosEmeraldGreen.png" alt="A green chaos emerald">
     </header>
-    <main class="box">
-      <p>
-        Hi! My name is Tyler. If you can't tell, I love Shadow the Hedgehog. But also,
-        I love music, programming, linux, homelab, langauge learning, manga, and so
-        much more.
-      </p>
-      <p>P.S. I created the chaos emerald logo in Inkscape! I'm very proud of it!</p>
-        <p><span class="bold">This site is mobile friendly! Check it out on mobile too!</span></p>
-
+    <main id="holder" class="box">
+        <home-component></home-component>
     </main>
     <custom-nav class="box nav"></custom-nav>
     <footer class="box">

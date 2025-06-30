@@ -4,11 +4,11 @@ class Navbar extends HTMLElement {
 
     this.innerHTML = `
       <nav>
-	<a href="index.html" title="Chaos Control Home">Home</a>
-	<a href="music-library.html" title="Music Library">Music Library</a>
-	<a href="#" title="#">Language Learning</a>
-	<a href="#" title="#">Blog</a>
-	<a href="#" title="#">Fediverse</a>
+	<a class="navlink" href="/" title="Chaos Control Home">Home</a>
+	<a class="navlink" href="/music-library" title="Music Library">Music Library</a>
+	<a class="navlink" href="/language-learning" title="#">Language Learning</a>
+	<a class="navlink" href="/" title="#">Blog</a>
+	<a class="navlink" href="/" title="#">Fediverse</a>
       </nav>
     `;
   }
