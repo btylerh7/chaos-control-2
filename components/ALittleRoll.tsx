@@ -1,22 +1,13 @@
 
 import { html } from 'hono/html';
 
-const song: string = `
-
-`
 const ALittleRoll = () => html`
-    <script src="https://unpkg.com/@strudel/web@1.0.3"></script>
     <h2>A Little Roll Never Hurt Anyone</h2>
     <p>
 	Please forgive me, don't be mad at me I worked hard on this I swear the drums are really complex 
 	and it was a great learning experience please don't click away please listen
     </p>
     <p>Click into the editor and press <code>Ctrl + Enter</code> to start and <code>Ctrl + .</code> to stop. Alternatively, use the buttons below.</p>
-    <style>
-	code {
-	    font-weight: bold;
-	}
-    </style>
     <button id="play">Play</button>
     <button id="stop">Stop</button>
     <script>
