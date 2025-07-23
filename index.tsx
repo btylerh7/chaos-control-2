@@ -1,16 +1,21 @@
 import { Hono } from 'hono';
-import StrudelRepl from './components/StrudelRepl';
+import GoodLuckBabe from './components/GoodLuckBabe'
 import ALittleRoll from './components/ALittleRoll';
 import { html } from 'hono/html';
 import Layout from './components/Layout';
+import ReplLayout from './components/ReplLayout';
 import { serveStatic } from 'hono/bun';
 import type { FC } from 'hono/jsx';
+import Homepage from './pages/Homepage';
 
 const app = new Hono();
 app.use('/static/*', serveStatic({ root: './' }))
 app.get('/', (c) => {
+    return c.html(<Homepage />)
+})
+app.get('/songlist', (c) => {
     return c.html(
-        <Layout title={"Chaos Control - Home"}>
+        <Layout title="Chaos Control - Home">
             <h1>Tyler's Website</h1>
             <p>This site is under construction. I just wanted to get my Strudel stuff shareable.</p>
             <h2>Strudel Stuff</h2>
@@ -24,21 +29,19 @@ app.get('/', (c) => {
 app.get('/a-little-roll', c => {
     return c.html(
         html`
-	    <Layout title="A Little Roll Never Hurt Anyone - Tyler">
+	    <ReplLayout title="A Little Roll Never Hurt Anyone - Tyler" isRepl={true} >
 		<h1>Yeaaaaah Strudelllll</h1>
 		${ALittleRoll()}
-	    </Layout>
+	    </ReplLayout>
 	`
     )
 })
 app.get('/good-luck-babe', (c) => {
     return c.html(
-        html`
-	    <Layout title="Good Luck, Babe - Tyler">
-		<h1>Yeaaaaah Strudelllll</h1>
-		${StrudelRepl()}
-	    </Layout>
-	`
+        <ReplLayout title="Good Luck, Babe - Tyler" >
+            <h1>Yeaaaaah Strudelllll</h1>
+            <GoodLuckBabe />
+        </ReplLayout>
     )
 })
 

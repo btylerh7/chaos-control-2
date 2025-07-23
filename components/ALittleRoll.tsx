@@ -7,27 +7,6 @@ const ALittleRoll = () => html`
 	Please forgive me, don't be mad at me I worked hard on this I swear the drums are really complex 
 	and it was a great learning experience please don't click away please listen
     </p>
-    <p>Click into the editor and press <code>Ctrl + Enter</code> to start and <code>Ctrl + .</code> to stop. Alternatively, use the buttons below.</p>
-    <button id="play">Play</button>
-    <button id="stop">Stop</button>
-    <script>
-    const repl = () => document.getElementById('repl')
-    initStrudel({
-      prebake: () => samples('github:tidalcycles/dirt-samples'),
-    });
-    document.getElementById('play').addEventListener('click', (e) => {
-	e.preventDefault();
-	repl().editor.repl.evaluate(repl().code)
-	//repl().editor.repl.start()
-
-
-    })
-    document.getElementById('stop').addEventListener('click', (e) => {
-	e.preventDefault();
-	repl().editor.repl.stop();
-
-    })
-    </script>
     <strudel-editor id="repl">
 <!--
 // @title A Little Roll Never Hurt Anyone

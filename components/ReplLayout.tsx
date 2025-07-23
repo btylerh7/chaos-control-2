@@ -1,8 +1,9 @@
 import { Fragment, type FC } from "hono/jsx";
 import { html } from "hono/html";
 
+// Same as Layout but no navbar
 
-const Layout: FC<{ title: string, children?: any }> = ({ title, children }: { title: string; children?: any }) => {
+const ReplLayout: FC<{ title: string, children?: any }> = ({ title, children }: { title: string; children?: any }) => {
     return (
         <Fragment>
             {
@@ -18,19 +19,11 @@ const Layout: FC<{ title: string, children?: any }> = ({ title, children }: { ti
 			    <title>${title}</title>
 		    </head>
 		    <body>
-			<div class="wrapper">
+			<div class="container">
 			    <header class="box">
 			      <p>Chaos Control</p>
 			      <img src="/static/ChaosEmeraldGreen.png" alt="A green chaos emerald">
 			    </header>
-			    <nav class="nav box">
-				<a class="navlink" href="/" title="Chaos Control Home">Home</a>
-				<a class="navlink" href="/music-library" title="Music Library">Music Library</a>
-				<a class="navlink" href="/language-learning" title="#">Language Learning</a>
-				<a class="navlink" href="/" title="#">Blog</a>
-				<a class="navlink" href="/" title="#">Fediverse</a>
-				<a class="navlink" href="/songlist">Strudel Songs</a>
-			    </nav>
 			    <main id="holder" class="box">
 				${children}
 			    </main>
@@ -46,4 +39,4 @@ const Layout: FC<{ title: string, children?: any }> = ({ title, children }: { ti
     )
 
 };
-export default Layout;
+export default ReplLayout;
