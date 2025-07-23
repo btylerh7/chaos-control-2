@@ -10,6 +10,7 @@ const StrudelRepl: FC<{ children?: any }> = ({ children }: { children?: any }) =
 	    <div class="audio-controls">
 		<button id="play">Play</button>
 		<button id="stop">Stop</button>
+		<button onclick="window.location.href='/songlist'">Back to Song List</button>
 	    </div>
 	    <script>
 	    const repl = () => document.getElementById('repl')
@@ -19,9 +20,6 @@ const StrudelRepl: FC<{ children?: any }> = ({ children }: { children?: any }) =
 	    document.getElementById('play').addEventListener('click', (e) => {
 		e.preventDefault();
 		repl().editor.repl.evaluate(repl().code)
-		//repl().editor.repl.start()
-
-
 	    })
 	    document.getElementById('stop').addEventListener('click', (e) => {
 		e.preventDefault();

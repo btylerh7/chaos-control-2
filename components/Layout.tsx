@@ -24,6 +24,7 @@ const Layout: FC<{ title: string, children?: any }> = ({ title, children }: { ti
 			      <img src="/static/ChaosEmeraldGreen.png" alt="A green chaos emerald">
 			    </header>
 			    <nav class="nav box">
+				<h2>Site Links</h2>
 				<a class="navlink" href="/" title="Chaos Control Home">Home</a>
 				<a class="navlink" href="/music-library" title="Music Library">Music Library</a>
 				<a class="navlink" href="/language-learning" title="#">Language Learning</a>

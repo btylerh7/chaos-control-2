@@ -1,13 +1,17 @@
 
 import { html } from 'hono/html';
+import StrudelRepl from './StrudelRepl';
 
-const ALittleRoll = () => html`
-    <h2>A Little Roll Never Hurt Anyone</h2>
-    <p>
-	Please forgive me, don't be mad at me I worked hard on this I swear the drums are really complex 
-	and it was a great learning experience please don't click away please listen
-    </p>
-    <strudel-editor id="repl">
+const ALittleRoll = () => {
+    return (
+        <>
+            <h2>A Little Roll Never Hurt Anyone</h2>
+            <p>
+                Please forgive me, don't be mad at me I worked hard on this I swear the drums are really complex
+                and it was a great learning experience please don't click away please listen
+            </p>
+            <StrudelRepl>
+                {html`
 <!--
 // @title A Little Roll Never Hurt Anyone
 // Twelve tone analysis https://www.youtube.com/watch?v=v0su7FiNLVg
@@ -47,6 +51,9 @@ $: arrange(
   [16, mainLoop]
 )
     -->
-    </strudel-editor>
-`;
+`}
+            </StrudelRepl>
+        </>
+    )
+}
 export default ALittleRoll;

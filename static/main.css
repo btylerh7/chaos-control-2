@@ -5,6 +5,7 @@
 	--app-background: white;
 	--accent-text: white;
 	--text: black;
+	--light-bg: #111;
 	padding: 0;
 	margin: 0;
 }
@@ -18,6 +19,7 @@ body {
 
 .songlist {
 	display: grid;
+	gap: 1rem;
 }
 
 code {
@@ -25,8 +27,10 @@ code {
 }
 
 .box {
-	border: 1px solid var(--text);
+	/* border: 1px solid var(--text); */
 	padding: 1rem;
+	background: var(--light-bg);
+
 }
 
 .wrapper {
@@ -80,14 +84,12 @@ header {
 
 main {
 	grid-area: main;
+
 }
 
 .nav {
-	container-type: inline-size;
-	container-name: nav-container;
 	grid-area: nav;
 	display: grid;
-	width: 100%;
 	grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
 	gap: 1rem;
 

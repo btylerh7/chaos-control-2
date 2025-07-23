@@ -16,8 +16,6 @@ app.get('/', (c) => {
 app.get('/songlist', (c) => {
     return c.html(
         <Layout title="Chaos Control - Home">
-            <h1>Tyler's Website</h1>
-            <p>This site is under construction. I just wanted to get my Strudel stuff shareable.</p>
             <h2>Strudel Stuff</h2>
             <div className="songlist">
                 <a href="/a-little-roll">A Little Roll Never Hurt Anyone</a>
@@ -28,12 +26,10 @@ app.get('/songlist', (c) => {
 });
 app.get('/a-little-roll', c => {
     return c.html(
-        html`
-	    <ReplLayout title="A Little Roll Never Hurt Anyone - Tyler" isRepl={true} >
-		<h1>Yeaaaaah Strudelllll</h1>
-		${ALittleRoll()}
-	    </ReplLayout>
-	`
+        <ReplLayout title="A Little Roll Never Hurt Anyone - Tyler" >
+            <h1>Yeaaaaah Strudelllll</h1>
+            <ALittleRoll />
+        </ReplLayout>
     )
 })
 app.get('/good-luck-babe', (c) => {
