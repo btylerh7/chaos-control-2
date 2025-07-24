@@ -11,11 +11,12 @@ const GoodLuckBabe = () => {
 <!--
 setcpm(115/4)
 const drums = stack(
-    sound("bd [cp,sd:2 bd] bd <sd:2,cp [sd:2,cp sd:2,cp]>"),
+    sound("bd [~ bd] bd ~"),
+    sound("sd:2,cp").struct("~ x ~ <x [x x]>"),
     sound("hh*8").gain(.75)
 ).bank("RolandTR808").room(0.05)
 const pad = stack(
-    note("<[d4, g4, a4] [e4,g4,a4] [d4,f#4,a4] [b3, d4, f#4, a4]>").struct("x*8").clip(.25)
+    n("<[1, 4, 5] [2,4,5] [1,3,5] [-1, 1, 3, 5]>").struct("x*8").scale("D4:major").scaleTranspose("<-1>").clip(.25)
 ).sound("z_sine, z_sawtooth").lpf(800).add(note("0, 0.15")).postgain(0.75)
 
 const bass = note("<g2 a2 d3 b2>").struct("[x x ~ ~ ~ x x ~ ~ x]").layer(
@@ -24,12 +25,11 @@ const bass = note("<g2 a2 d3 b2>").struct("[x x ~ ~ ~ x x ~ ~ x]").layer(
 )
 
 const lead = cat(
-    note("f#4 ~ f#4 e4 f#4 a4 ~ e4"),
-    note("e4 ~ e4 ~ e4 d4 ~ d4"),
-    note("f#4 ~ f#4 ~ f#4 e4 ~ d4"),
-    note("d5 ~ d5 ~ c#5 ~ c#5 ~")
-
-)
+    n("3 ~ 3 2 3 5 ~ 2"),
+    n("2 ~ 2 ~ 2 1 ~ 1"),
+    n("3 ~ 3 ~ 3 2 ~ 1"),
+    n("8 ~ 8 ~ 7 ~ 7 ~")
+).scale("D4:major").scaleTranspose("<-1>")
 .sound("z_sawtooth")
 .adsr("0.01:0.25:0.55:0.75")
 .lpf(2500)
