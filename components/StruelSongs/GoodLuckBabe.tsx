@@ -1,5 +1,5 @@
-import StrudelRepl from "./StrudelRepl"
 import { html } from "hono/html"
+import StrudelRepl from "../StrudelRepl"
 const GoodLuckBabe = () => {
     return (
         <>
