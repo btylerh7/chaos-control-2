@@ -1,6 +1,6 @@
 
 import { html } from 'hono/html';
-import StrudelRepl from './StrudelRepl';
+import StrudelRepl from '../StrudelRepl';
 
 const ALittleRoll = () => {
     return (
