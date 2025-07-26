@@ -7,6 +7,7 @@ import Homepage from './pages/Homepage';
 import NighttimeChug from './components/StruelSongs/NighttimeChug';
 import StrudelSongs from './pages/StrudelSongs';
 import SyntheticMotorOil from './components/StruelSongs/SyntheticMotorOil';
+import VengenceIsMine from './components/StruelSongs/VengenceIsMine';
 
 const app = new Hono();
 app.use('/static/*', serveStatic({ root: './' }))
@@ -34,6 +35,15 @@ app.get('/nighttime-chug', (c) => {
     return c.html(
         <ReplLayout title="Nighttime Chug - Tyler">
             <NighttimeChug />
+        </ReplLayout>
+
+    )
+
+})
+app.get('/radical-highway-doom', (c) => {
+    return c.html(
+        <ReplLayout title="Vengence is Mine - Tyler Remix">
+            <VengenceIsMine />
         </ReplLayout>
 
     )
